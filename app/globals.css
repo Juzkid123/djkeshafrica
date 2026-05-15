@@ -1,0 +1,72 @@
+@import 'tailwindcss';
+
+:root {
+  --dj-black-primary: #0d0d0d;
+  --dj-black-secondary: #1a1a1a;
+  --dj-purple: #9333ea;
+  --dj-blue: #3b82f6;
+  --dj-pink: #ec4899;
+  --dj-cyan: #f2f2f2;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    cursor: none;
+  }
+  
+  body {
+    background-color: var(--dj-black-primary);
+    color: var(--dj-cyan);
+  }
+}
+
+@layer utilities {
+  .bg-dj-black-primary {
+    @apply bg-black;
+    background-color: var(--dj-black-primary);
+  }
+  
+  .bg-dj-black-secondary {
+    background-color: var(--dj-black-secondary);
+  }
+  
+  .text-dj-cyan {
+    color: var(--dj-cyan);
+  }
+  
+  .text-dj-purple {
+    color: var(--dj-purple);
+  }
+  
+  .text-dj-blue {
+    color: var(--dj-blue);
+  }
+  
+  .text-dj-pink {
+    color: var(--dj-pink);
+  }
+  
+  .border-dj-purple {
+    border-color: var(--dj-purple);
+  }
+  
+  .shadow-glow-purple {
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.5), 0 0 20px rgba(147, 51, 234, 0.3);
+  }
+  
+  .shadow-glow-blue {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  
+  .shadow-glow-pink {
+    box-shadow: 0 0 10px rgba(236, 72, 153, 0.5), 0 0 20px rgba(236, 72, 153, 0.3);
+  }
+  
+  .glass {
+    background-color: rgba(13, 13, 13, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
