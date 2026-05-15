@@ -84,22 +84,21 @@ export function Hero() {
           </motion.div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center w-full sm:w-auto">
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(212, 175, 55, 0.8)' }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-dj-gold text-dj-cyan font-bold uppercase tracking-wider hover:shadow-glow-gold transition-all duration-300 rounded relative overflow-hidden group text-sm sm:text-base"
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center items-center w-fit mx-auto">
+            <motion.a
+              href="#contact"
+              whileHover={{ boxShadow: '0 0 30px rgba(212, 175, 55, 0.8)' }}
+              className="w-fit px-6 sm:px-8 py-3 sm:py-4 border-2 border-dj-gold text-dj-cyan font-bold uppercase tracking-wider hover:shadow-glow-gold transition-all duration-300 rounded relative overflow-hidden group text-sm sm:text-base flex-shrink-0"
             >
               <span className="relative z-10">Book DJ Kesh</span>
               <div className="absolute inset-0 bg-gradient-to-r from-dj-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-            </motion.button>
+            </motion.a>
             <motion.a
               href="https://audiomack.com/djkeshafrica/song/we-outside?share-user-id=23213730"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(59, 130, 246, 0.8)' }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-dj-blue text-dj-cyan font-bold uppercase tracking-wider hover:shadow-glow-blue transition-all duration-300 rounded relative overflow-hidden group inline-block text-center text-sm sm:text-base"
+              whileHover={{ boxShadow: '0 0 30px rgba(59, 130, 246, 0.8)' }}
+              className="w-fit px-6 sm:px-8 py-3 sm:py-4 border-2 border-dj-blue text-dj-cyan font-bold uppercase tracking-wider hover:shadow-glow-blue transition-all duration-300 rounded relative overflow-hidden group text-sm sm:text-base flex-shrink-0"
             >
               <span className="relative z-10">Listen Mixes</span>
               <div className="absolute inset-0 bg-gradient-to-r from-dj-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />

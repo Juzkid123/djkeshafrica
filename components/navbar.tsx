@@ -48,31 +48,11 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 flex items-center justify-between h-12 sm:h-14">
-        {/* Mobile Menu Button - Left Side on Mobile */}
-        <motion.button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden flex flex-col gap-2"
-          whileHover={{ scale: 1.1 }}
-        >
-          <motion.span
-            animate={{ rotate: mobileMenuOpen ? 45 : 0, y: mobileMenuOpen ? 8 : 0 }}
-            className="w-6 h-0.5 bg-dj-gold block"
-          />
-          <motion.span
-            animate={{ opacity: mobileMenuOpen ? 0 : 1 }}
-            className="w-6 h-0.5 bg-dj-gold block"
-          />
-          <motion.span
-            animate={{ rotate: mobileMenuOpen ? -45 : 0, y: mobileMenuOpen ? -8 : 0 }}
-            className="w-6 h-0.5 bg-dj-gold block"
-          />
-        </motion.button>
-
         {/* Logo - Center on Mobile, Left on Desktop */}
         <motion.a
           href="#home"
           whileHover={{ scale: 1.05 }}
-          className="flex items-center flex-shrink-0 md:flex-1"
+          className="flex items-center flex-shrink-0"
         >
           <Image
             src={dj.logo}
@@ -85,8 +65,31 @@ export function Navbar() {
           />
         </motion.a>
 
+        {/* Mobile Menu Button - Right Side on Mobile */}
+        <motion.button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden flex flex-col gap-2"
+          whileHover={{ scale: 1.1 }}
+        >
+          <motion.span
+            animate={{ rotate: mobileMenuOpen ? 45 : 0, y: mobileMenuOpen ? 8 : 0 }}
+            className="w-6 h-0.5 bg-white block"
+          />
+          <motion.span
+            animate={{ opacity: mobileMenuOpen ? 0 : 1 }}
+            className="w-6 h-0.5 bg-white block"
+          />
+          <motion.span
+            animate={{ rotate: mobileMenuOpen ? -45 : 0, y: mobileMenuOpen ? -8 : 0 }}
+            className="w-6 h-0.5 bg-white block"
+          />
+        </motion.button>
+
+        {/* Spacer for Desktop */}
+        <div className="hidden md:flex flex-1" />
+
         {/* Navigation Links - Desktop */}
-        <div className="hidden md:flex items-center justify-center gap-4 lg:gap-6 flex-1">
+        <div className="hidden md:flex items-center justify-end gap-4 lg:gap-6">
           {navLinks.map((link, index) => (
             <motion.a
               key={link.label}
@@ -96,15 +99,12 @@ export function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
               whileHover={{ color: '#d4af37' }}
-              className="text-dj-cyan text-xs lg:text-sm uppercase tracking-wider lg:tracking-widest hover:text-dj-gold transition-colors whitespace-nowrap cursor-pointer"
+              className="text-dj-cyan text-sm lg:text-base font-extrabold uppercase tracking-widest lg:tracking-[0.15em] hover:text-dj-gold transition-colors whitespace-nowrap cursor-pointer pb-1 border-b-2 border-b-transparent hover:border-b-dj-gold"
             >
               {link.label}
             </motion.a>
           ))}
         </div>
-
-        {/* Spacer for Desktop */}
-        <div className="hidden md:flex flex-1" />
       </div>
 
       {/* Mobile Menu */}
