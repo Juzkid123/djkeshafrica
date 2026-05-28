@@ -72,7 +72,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-8 sm:mb-12"
           >
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-dj-pink font-bold tracking-wider">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#ff0000] font-bold tracking-wider">
               {dj.subline}
             </p>
           </motion.div>

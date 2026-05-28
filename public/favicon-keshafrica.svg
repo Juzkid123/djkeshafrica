@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" fill="#ffffff" />
+  <g transform="translate(72 203) scale(0.59)">
+    <g fill="#a80000">
+      <circle cx="62" cy="72" r="38" />
+      <circle cx="62" cy="72" r="22" fill="#ffffff" />
+      <circle cx="62" cy="72" r="13" fill="#a80000" />
+      <path d="M87 24h20v65c0 30-24 54-54 54h-7v-29h7c14 0 25-11 25-25V24h9z" />
+      <rect x="89" y="4" width="17" height="17" rx="3" />
+      <rect x="116" y="4" width="17" height="17" rx="3" />
+    </g>
+    <text x="150" y="78" fill="#000000" font-family="Arial Black, Arial, sans-serif" font-size="64" font-weight="900" letter-spacing="-2">KESHAFRICA</text>
+    <text x="154" y="116" fill="#000000" font-family="Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="13">A ViBE DJ || PROMOTER</text>
+    <rect x="436" y="16" width="8" height="15" fill="#a80000" />
+  </g>
+</svg>

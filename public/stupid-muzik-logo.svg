@@ -17,7 +17,7 @@
   <circle cx="512" cy="512" r="455" fill="#147864" />
   <circle cx="512" cy="512" r="300" fill="#ffffff" />
 
-  <g font-family="Arial Black, Arial, sans-serif" font-size="76" font-weight="900" fill="#ff8118" stroke="#ffffff" stroke-width="10" paint-order="stroke fill" filter="url(#textShadow)">
+  <g font-family="Arial Black, Arial, sans-serif" font-size="76" font-weight="900" fill="#ff0000" stroke="#ffffff" stroke-width="10" paint-order="stroke fill" filter="url(#textShadow)">
     <text>
       <textPath href="#topText" startOffset="50%" text-anchor="middle">MUZIK TO THE</textPath>
     </text>

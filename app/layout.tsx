@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     title: 'STUP!DMUZIK TO THE WIASE',
   },
   icons: {
-    icon: [{ url: '/favicon.png?v=2', type: 'image/png' }],
-    shortcut: [{ url: '/favicon.png?v=2', type: 'image/png' }],
-    apple: [{ url: '/favicon.png?v=2', type: 'image/png' }],
+    icon: [{ url: '/favicon-keshafrica.svg?v=4', type: 'image/svg+xml' }],
+    shortcut: [{ url: '/favicon-keshafrica.svg?v=4', type: 'image/svg+xml' }],
+    apple: [{ url: '/favicon-keshafrica.svg?v=4', type: 'image/svg+xml' }],
   },
 }
 
