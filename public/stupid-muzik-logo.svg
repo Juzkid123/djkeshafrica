@@ -1,0 +1,67 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path id="topText" d="M190 510a322 322 0 0 1 644 0" />
+    <path id="leftText" d="M132 470a380 380 0 0 0 184 326" />
+    <path id="rightText" d="M892 470a380 380 0 0 1-184 326" />
+    <filter id="textShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feOffset dx="0" dy="5" />
+      <feGaussianBlur stdDeviation="1.5" />
+      <feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0" />
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <circle cx="512" cy="512" r="455" fill="#147864" />
+  <circle cx="512" cy="512" r="300" fill="#ffffff" />
+
+  <g font-family="Arial Black, Arial, sans-serif" font-size="76" font-weight="900" fill="#ff8118" stroke="#ffffff" stroke-width="10" paint-order="stroke fill" filter="url(#textShadow)">
+    <text>
+      <textPath href="#topText" startOffset="50%" text-anchor="middle">MUZIK TO THE</textPath>
+    </text>
+    <text>
+      <textPath href="#leftText" startOffset="50%" text-anchor="middle">STUPID</textPath>
+    </text>
+    <text>
+      <textPath href="#rightText" startOffset="50%" text-anchor="middle">WIASE</textPath>
+    </text>
+  </g>
+
+  <g stroke="#ffffff" stroke-width="10" fill="none">
+    <path d="M152 420l35 42 52-10-28 46 25 48-51-14-39 37-3-54-47-27 50-19 6-49z" />
+    <path d="M872 420l-35 42-52-10 28 46-25 48 51-14 39 37 3-54 47-27-50-19-6-49z" />
+  </g>
+
+  <g fill="#202020">
+    <path d="M376 318c35-86 90-122 123-67 14 23 23 61 20 91-43-60-91-73-143-24z" />
+    <path d="M648 318c-35-86-90-122-123-67-14 23-23 61-20 91 43-60 91-73 143-24z" />
+    <path d="M290 530c45 82 128 124 221 124s176-42 223-124c25-44 78-10 67 42-28 136-145 232-289 232S251 708 223 572c-11-52 42-86 67-42z" />
+  </g>
+
+  <g fill="#ffffff" stroke="#202020" stroke-width="7">
+    <path d="M322 386c60-76 148-90 184 10 38 106 0 181-76 197-80 17-137-44-133-125 1-27 8-57 25-82z" />
+    <path d="M702 386c-60-76-148-90-184 10-38 106 0 181 76 197 80 17 137-44 133-125-1-27-8-57-25-82z" />
+  </g>
+
+  <g fill="#202020">
+    <circle cx="442" cy="484" r="21" />
+    <circle cx="582" cy="484" r="21" />
+  </g>
+  <g fill="#bfbfbf" opacity="0.7">
+    <path d="M346 543c50 39 113 37 158-5-19 59-114 79-158 5z" />
+    <path d="M678 543c-50 39-113 37-158-5 19 59 114 79 158 5z" />
+  </g>
+
+  <g fill="#ffffff">
+    <path d="M332 624c16 19 35 34 57 46-1 32-16 45-35 29-16-14-25-42-22-75z" />
+    <path d="M430 693c35 9 72 10 112 3-19 47-74 55-112-3z" />
+    <path d="M644 670c22-12 41-27 57-46 3 33-6 61-22 75-19 16-34 3-35-29z" />
+  </g>
+
+  <path d="M531 735c48 21 88 67 110 128 35 97-1 160-92 167-93 6-164-57-138-149 17-62 44-111 120-146z" fill="#ff6572" stroke="#202020" stroke-width="12" />
+  <path d="M503 740c38 8 69 28 94 61" stroke="#202020" stroke-width="9" stroke-linecap="round" />
+  <ellipse cx="596" cy="880" rx="23" ry="55" fill="#ff9ca5" opacity="0.7" transform="rotate(-12 596 880)" />
+  <ellipse cx="477" cy="758" rx="42" ry="12" fill="#ff9ca5" opacity="0.85" />
+</svg>

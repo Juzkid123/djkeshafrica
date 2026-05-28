@@ -72,12 +72,6 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-8 sm:mb-12"
           >
-            <p className="text-lg sm:text-xl md:text-3xl lg:text-4xl text-dj-gold mb-2 sm:mb-4 font-bold tracking-wider">
-              {dj.tagline}
-            </p>
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-dj-blue font-light tracking-widest mb-2 sm:mb-3">
-              {dj.fullTagline}
-            </p>
             <p className="text-xs sm:text-sm md:text-base lg:text-lg text-dj-pink font-bold tracking-wider">
               {dj.subline}
             </p>
@@ -104,6 +98,19 @@ export function Hero() {
               <div className="absolute inset-0 bg-gradient-to-r from-dj-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </motion.a>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.35 }}
+            className="mt-6 sm:mt-8 flex justify-center"
+          >
+            <img
+              src="/stupid-muzik-logo.svg"
+              alt="STUPID MUZIK TO THE WIASE"
+              className="h-28 w-28 sm:h-36 sm:w-36 md:h-44 md:w-44 object-contain"
+            />
+          </motion.div>
         </div>
       </div>
     </section>

@@ -48,12 +48,12 @@ export function Navbar() {
           : 'py-3'
       }`}
     >
-      <div className="w-full flex items-center justify-between h-12 sm:h-14 px-3 sm:px-4 md:px-6">
+      <div className="w-full flex items-center justify-between h-12 sm:h-14 px-0 sm:px-4 md:px-6">
         {/* Logo - Top Left */}
         <motion.a
           href="#home"
           whileHover={{ scale: 1.05 }}
-          className="flex items-center flex-shrink-0"
+          className="flex items-center flex-shrink-0 mr-auto"
         >
           <Image
             src={dj.logo}
@@ -90,7 +90,7 @@ export function Navbar() {
         {/* Mobile Menu Button - Right Side on Mobile */}
         <motion.button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden flex flex-col gap-2"
+          className="md:hidden mr-3 flex flex-col gap-2"
           whileHover={{ scale: 1.1 }}
         >
           <motion.span

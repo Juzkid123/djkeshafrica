@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Bebas_Neue } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { CustomCursor } from '@/components/custom-cursor'
-import { dj } from '@/lib/constants'
 import './globals.css'
 
 const geist = Geist({ 
@@ -31,9 +30,9 @@ export const metadata: Metadata = {
     title: 'STUP!DMUZIK TO THE WIASE',
   },
   icons: {
-    icon: dj.logo,
-    shortcut: dj.logo,
-    apple: dj.logo,
+    icon: [{ url: '/favicon.png?v=2', type: 'image/png' }],
+    shortcut: [{ url: '/favicon.png?v=2', type: 'image/png' }],
+    apple: [{ url: '/favicon.png?v=2', type: 'image/png' }],
   },
 }
 
