@@ -6,7 +6,7 @@ import { mixes, dj } from '@/lib/constants'
 
 export function AudiomackBanner() {
   return (
-    <section className="py-12 sm:py-20 md:py-32 px-3 sm:px-4 md:px-6 bg-gradient-to-br from-dj-gold/10 to-dj-blue/10 border-y border-dj-gold/30">
+    <section className="py-12 sm:py-20 md:py-32 px-3 sm:px-4 md:px-6 bg-gradient-to-br from-dj-gold/10 to-dj-blue/10 border-y border-dj-gold/30 overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

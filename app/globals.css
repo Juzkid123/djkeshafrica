@@ -13,11 +13,20 @@
   html {
     scroll-behavior: smooth;
     cursor: none;
+    overflow-x: hidden;
+    max-width: 100%;
   }
   
   body {
     background-color: var(--dj-black-primary);
     color: var(--dj-cyan);
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  * {
+    box-sizing: border-box;
   }
 }
 

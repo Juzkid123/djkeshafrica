@@ -24,7 +24,7 @@ export function Events() {
   }
 
   return (
-    <section id="events" className="py-20 md:py-32 px-4 md:px-6 bg-dj-black-secondary">
+    <section id="events" className="py-12 sm:py-20 md:py-32 px-3 sm:px-4 md:px-6 bg-dj-black-secondary overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div

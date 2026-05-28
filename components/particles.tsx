@@ -14,7 +14,7 @@ export function Particles() {
 
     // Set canvas size
     const setCanvasSize = () => {
-      canvas.width = window.innerWidth
+      canvas.width = Math.min(window.innerWidth, document.documentElement.clientWidth)
       canvas.height = window.innerHeight
     }
     setCanvasSize()

@@ -38,7 +38,7 @@ export function Hero() {
   }, [displayedText, isDeleting, fullText])
 
   return (
-    <section id="home" className="relative h-screen w-full overflow-hidden bg-dj-black-primary">
+    <section id="home" className="relative h-screen w-full overflow-x-hidden overflow-y-hidden bg-dj-black-primary">
       {/* Particles background */}
       <Particles />
 
@@ -90,7 +90,7 @@ export function Hero() {
               whileHover={{ boxShadow: '0 0 30px rgba(212, 175, 55, 0.8)' }}
               className="w-fit px-6 sm:px-8 py-3 sm:py-4 border-2 border-dj-gold text-dj-cyan font-bold uppercase tracking-wider hover:shadow-glow-gold transition-all duration-300 rounded relative overflow-hidden group text-sm sm:text-base flex-shrink-0"
             >
-              <span className="relative z-10">Book DJ Kesh</span>
+              <span className="relative z-10">Book DJ KESHAFRICA</span>
               <div className="absolute inset-0 bg-gradient-to-r from-dj-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </motion.a>
             <motion.a
@@ -104,20 +104,6 @@ export function Hero() {
               <div className="absolute inset-0 bg-gradient-to-r from-dj-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </motion.a>
           </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center gap-2"
-          >
-            <p className="text-dj-cyan text-sm uppercase tracking-widest">Scroll</p>
-            <svg className="w-6 h-6 text-dj-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </motion.div>
         </div>
       </div>
     </section>

@@ -8,7 +8,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-dj-black-primary border-t border-dj-gold/20 py-12 px-4 md:px-6">
+    <footer className="bg-dj-black-primary border-t border-dj-gold/20 py-12 px-4 md:px-6 overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -81,12 +81,31 @@ export function Footer() {
                 href={dj.socials.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.2, color: '#000000' }}
+                whileHover={{ scale: 1.2, color: '#69C9D0' }}
                 className="w-10 h-10 rounded-full border border-dj-gold/30 flex items-center justify-center text-dj-cyan/60 hover:text-dj-gold transition-colors"
                 title="TikTok"
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19.498 3h-3.996c.228 2.159.869 4.246 1.999 6v5.981c0 2.209-1.791 4-4 4s-4-1.791-4-4V9.52c-1.165 1.412-2.949 2.48-5.005 2.48-.828 0-1.623-.154-2.389-.44v3.237c0 .828.672 1.5 1.5 1.5s1.5-.672 1.5-1.5V14c2.209 0 4 1.791 4 4v2c0 2.209-1.791 4-4 4s-4-1.791-4-4v-8.981C2.992 6.626 1.5 4.519 1.5 2c0-1.379 1.121-2.5 2.5-2.5s2.5 1.121 2.5 2.5c0 .552.448 1 1 1h2c.552 0 1-.448 1-1C11 1.121 12.121 0 13.5 0S16 1.121 16 2.5V3h3.498z" />
+                <svg className="w-5 h-5" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path
+                    fill="#69C9D0"
+                    d="M20.02 18.32v-1.55a11.96 11.96 0 0 0-1.7-.13c-6.48 0-11.75 5.27-11.75 11.75 0 3.98 1.99 7.51 5.03 9.64a11.69 11.69 0 0 1-2.29-6.96c0-6.39 5.12-11.6 11.47-11.75h-.76Z"
+                  />
+                  <path
+                    fill="#69C9D0"
+                    d="M20.3 35.4c2.89 0 5.25-2.3 5.36-5.16l.01-25.62h4.68a8.94 8.94 0 0 1-.14-1.58h-7.29l-.01 25.63a5.37 5.37 0 0 1-7.74 4.74 5.36 5.36 0 0 0 5.13 1.99ZM39.08 13.31v-1.46a8.88 8.88 0 0 1-4.91-1.47 8.99 8.99 0 0 0 4.91 2.93Z"
+                  />
+                  <path
+                    fill="#EE1D52"
+                    d="M34.17 10.38a8.92 8.92 0 0 1-2.21-5.89h-1.61a8.95 8.95 0 0 0 3.82 5.89ZM18.32 23.92a5.37 5.37 0 0 0-2.42 10.16 5.37 5.37 0 0 1 4.4-8.46c.54 0 1.06.08 1.55.23v-7.42a11.96 11.96 0 0 0-1.7-.13h-.13v5.86a5.4 5.4 0 0 0-1.7-.24Z"
+                  />
+                  <path
+                    fill="#EE1D52"
+                    d="M39.08 13.31v5.66a15.39 15.39 0 0 1-9.01-2.9v12.18c0 6.48-5.27 11.75-11.75 11.75a11.68 11.68 0 0 1-6.72-1.97 11.73 11.73 0 0 0 9.46 4.8c6.48 0 11.75-5.27 11.75-11.75V18.9a15.38 15.38 0 0 0 9.01 2.9v-8.3a9.18 9.18 0 0 1-2.74-.19Z"
+                  />
+                  <path
+                    fill="#010101"
+                    d="M30.07 28.25V16.07a15.39 15.39 0 0 0 9.01 2.9v-5.66a8.99 8.99 0 0 1-4.91-2.93 8.95 8.95 0 0 1-3.82-5.89h-4.68l-.01 25.62a5.37 5.37 0 0 1-9.76 3.97 5.37 5.37 0 0 1 4.12-9.92v-5.86c-6.35.15-11.47 5.36-11.47 11.75 0 2.68.9 5.15 2.41 7.12A11.68 11.68 0 0 0 18.32 40c6.48 0 11.75-5.27 11.75-11.75Z"
+                  />
                 </svg>
               </motion.a>
             </div>

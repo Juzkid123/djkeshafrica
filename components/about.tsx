@@ -25,7 +25,7 @@ export function About() {
   }
 
   return (
-    <section id="about" className="py-12 sm:py-20 md:py-32 px-3 sm:px-4 md:px-6 bg-dj-black-primary">
+    <section id="about" className="py-12 sm:py-20 md:py-32 px-3 sm:px-4 md:px-6 bg-dj-black-primary overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           variants={containerVariants}
