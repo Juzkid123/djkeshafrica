@@ -4,7 +4,7 @@ export const dj = {
   fullTagline: 'STUdy Play In Different MUZIK',
   subline: 'STUP!DMUZIK TO THE WIASE',
   bio: 'DJ Kesh Africa is a renowned commercial DJ and dynamic music brand in Ghana, celebrated for electrifying performances and the ability to engage diverse audiences across regions. Blending music, lifestyle, and culture, DJ Kesh Africa has cultivated a strong and loyal following among the country\'s youth and nightlife community.',
-  location: 'Africa',
+  location: 'Accra, Ghana',
   email: 'djkeshafrica@gmail.com',
   phone: ['+233 26 428 5452', '+233 50 676 1186'],
   logo: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-cuuOPKlAWhINkR4kVkDBvq9fxVs4II.png',

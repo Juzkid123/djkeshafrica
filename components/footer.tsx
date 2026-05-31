@@ -28,7 +28,7 @@ export function Footer() {
               quality={95}
             />
             <p className="text-dj-cyan/60 text-sm leading-relaxed">
-              STU•P•I•D MUZIK. Authentic, boundary-pushing music from Africa to the world.
+              STU•P•I•D MUZIK INC. SMI MANAGEMENT. Authentic, boundary-pushing music from Africa to the world.
             </p>
           </div>
 
@@ -153,7 +153,7 @@ export function Footer() {
           viewport={{ once: true }}
           className="text-center text-dj-cyan/40 text-sm"
         >
-          <p>&copy; {currentYear} {dj.name} - STU•P•I•D MUZIK. All rights reserved. Crafted with precision and passion.</p>
+          <p>&copy; {currentYear} {dj.name} - STU•P•I•D MUZIK INC. SMI MANAGEMENT. All rights reserved. Crafted with precision and passion.</p>
         </motion.div>
       </div>
     </footer>
