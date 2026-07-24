@@ -1,5 +1,7 @@
 export const dj = {
   name: 'DJ KESHAFRICA',
+  displayName: 'DJ Keshafrica',
+  brandName: 'STUP!D MUZIK',
   tagline: 'STU•P•I•D MUZIK',
   fullTagline: 'STUdy Play In Different MUZIK',
   subline: 'STUP!DMUZIK TO THE WIASE',

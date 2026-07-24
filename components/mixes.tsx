@@ -26,7 +26,7 @@ export function Mixes() {
   }
 
   return (
-    <section id="mixes" className="py-12 sm:py-20 md:py-32 px-3 sm:px-4 md:px-6 bg-dj-black-primary overflow-x-hidden">
+    <section id="mixes" className="py-16 sm:py-24 md:py-32 px-4 md:px-6 bg-[#f7f4ed] text-[#090909] overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -34,14 +34,14 @@ export function Mixes() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-8 sm:mb-12 md:mb-16"
+          className="mb-10 md:mb-16"
         >
-          <div className="flex flex-col items-start gap-4 sm:gap-6 mb-4 sm:mb-6">
+          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end mb-5">
             <div className="w-full">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-dj-cyan uppercase tracking-tight mb-2">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-[#090909] uppercase tracking-tight mb-2">
                 Latest Mixes
               </h2>
-              <p className="text-dj-cyan/60 text-xs sm:text-base md:text-lg">All tracks available exclusively on Audiomack. Click any mix to listen and stream.</p>
+              <p className="max-w-2xl text-xs sm:text-base md:text-lg text-[#3d3a33]">All tracks available exclusively on Audiomack. Click any mix to listen and stream.</p>
             </div>
             
             {/* Audiomack Official Logo */}
@@ -63,7 +63,7 @@ export function Mixes() {
               />
             </motion.a>
           </div>
-          <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-dj-gold to-dj-blue rounded-full" />
+          <div className="w-20 h-1 bg-[#c8a24a]" />
         </motion.div>
 
         {/* Mixes Grid */}

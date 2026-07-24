@@ -25,32 +25,29 @@ export function About() {
   }
 
   return (
-    <section id="about" className="py-12 sm:py-20 md:py-32 px-3 sm:px-4 md:px-6 bg-dj-black-primary overflow-x-hidden">
+    <section id="about" className="py-16 sm:py-24 md:py-32 px-4 md:px-6 bg-dj-black-primary overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center"
         >
           {/* Left - Image */}
           <motion.div
             variants={itemVariants}
-            className="relative aspect-square rounded-lg overflow-hidden border border-dj-gold/30"
+            className="relative aspect-[4/5] overflow-hidden border border-dj-gold/35 bg-[#111111]"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-dj-gold/10 to-dj-blue/10 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-dj-gold/15 via-transparent to-black/40 z-10" />
             <Image
               src={dj.profileImage}
               alt={dj.name}
               fill
-              className="object-cover object-top"
-              priority
+              className="object-cover object-top grayscale contrast-110"
               quality={95}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
-            {/* Glow effect */}
-            <div className="absolute inset-0 shadow-glow-gold z-0" />
           </motion.div>
 
           {/* Right - Content */}
@@ -65,28 +62,28 @@ export function About() {
               >
                 About
               </motion.h2>
-              <div className="w-16 sm:w-20 h-1 sm:h-1.5 bg-gradient-to-r from-dj-gold to-dj-blue rounded-full" />
+              <div className="w-16 sm:w-20 h-1 sm:h-1.5 bg-dj-gold" />
             </div>
 
-            <p className="text-sm sm:text-base md:text-lg text-dj-cyan/80 leading-relaxed">
+            <p className="text-base md:text-lg text-dj-cyan/75 leading-8">
               {dj.bio}
             </p>
 
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 pt-4 sm:pt-6">
-              <div className="glass p-3 sm:p-4 md:p-6 rounded-lg">
-                <p className="text-xl sm:text-2xl md:text-3xl font-bold text-dj-gold mb-1 sm:mb-2">500+</p>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-4 sm:pt-6">
+              <div className="border border-dj-gold/20 bg-white/[0.04] p-4 md:p-6">
+                <p className="text-2xl md:text-4xl font-black text-dj-gold mb-1">500+</p>
                 <p className="text-xs sm:text-sm text-dj-cyan/60 uppercase tracking-wider">Events Performed</p>
               </div>
-              <div className="glass p-3 sm:p-4 md:p-6 rounded-lg">
-                <p className="text-xl sm:text-2xl md:text-3xl font-bold text-dj-blue mb-1 sm:mb-2">2M+</p>
+              <div className="border border-dj-gold/20 bg-white/[0.04] p-4 md:p-6">
+                <p className="text-2xl md:text-4xl font-black text-dj-gold mb-1">2M+</p>
                 <p className="text-xs sm:text-sm text-dj-cyan/60 uppercase tracking-wider">Listeners Worldwide</p>
               </div>
-              <div className="glass p-3 sm:p-4 md:p-6 rounded-lg">
-                <p className="text-xl sm:text-2xl md:text-3xl font-bold text-dj-pink mb-1 sm:mb-2">15</p>
+              <div className="border border-dj-gold/20 bg-white/[0.04] p-4 md:p-6">
+                <p className="text-2xl md:text-4xl font-black text-dj-gold mb-1">15</p>
                 <p className="text-xs sm:text-sm text-dj-cyan/60 uppercase tracking-wider">Awards Won</p>
               </div>
-              <div className="glass p-3 sm:p-4 md:p-6 rounded-lg">
-                <p className="text-xl sm:text-2xl md:text-3xl font-bold text-dj-cyan mb-1 sm:mb-2">6+</p>
+              <div className="border border-dj-gold/20 bg-white/[0.04] p-4 md:p-6">
+                <p className="text-2xl md:text-4xl font-black text-dj-gold mb-1">6+</p>
                 <p className="text-xs sm:text-sm text-dj-cyan/60 uppercase tracking-wider">Countries</p>
               </div>
             </div>

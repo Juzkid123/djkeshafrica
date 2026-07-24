@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { dj } from '@/lib/constants'
 
 export function BookingForm() {
   const [formData, setFormData] = useState({
@@ -11,7 +12,6 @@ export function BookingForm() {
     eventType: 'private-event',
     message: '',
   })
-  const [submitted, setSubmitted] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -20,19 +20,11 @@ export function BookingForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically send the form data to a server
-    console.log('Form submitted:', formData)
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormData({
-        name: '',
-        email: '',
-        eventDate: '',
-        eventType: 'private-event',
-        message: '',
-      })
-    }, 3000)
+    const subject = encodeURIComponent(`Booking inquiry: ${formData.eventType} on ${formData.eventDate}`)
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nEvent date: ${formData.eventDate}\nEvent type: ${formData.eventType}\n\nDetails:\n${formData.message || 'No additional details provided.'}`,
+    )
+    window.location.href = `mailto:${dj.email}?subject=${subject}&body=${body}`
   }
 
   const containerVariants = {
@@ -92,6 +84,7 @@ export function BookingForm() {
               value={formData.name}
               onChange={handleChange}
               required
+              autoComplete="name"
               className="w-full px-4 sm:px-6 py-2 sm:py-3 bg-dj-black-primary border border-dj-gold/30 text-dj-cyan placeholder-dj-cyan/40 rounded-lg focus:outline-none focus:border-dj-gold focus:shadow-glow-gold transition-all duration-300 text-sm"
               placeholder="Your name"
             />
@@ -109,6 +102,7 @@ export function BookingForm() {
               value={formData.email}
               onChange={handleChange}
               required
+              autoComplete="email"
               className="w-full px-4 sm:px-6 py-2 sm:py-3 bg-dj-black-primary border border-dj-gold/30 text-dj-cyan placeholder-dj-cyan/40 rounded-lg focus:outline-none focus:border-dj-gold focus:shadow-glow-gold transition-all duration-300 text-sm"
               placeholder="your@email.com"
             />
@@ -126,6 +120,7 @@ export function BookingForm() {
               value={formData.eventDate}
               onChange={handleChange}
               required
+              min={new Date().toISOString().split('T')[0]}
               className="w-full px-4 sm:px-6 py-2 sm:py-3 bg-dj-black-primary border border-dj-gold/30 text-dj-cyan placeholder-dj-cyan/40 rounded-lg focus:outline-none focus:border-dj-gold focus:shadow-glow-gold transition-all duration-300 text-sm"
             />
           </motion.div>
@@ -172,23 +167,15 @@ export function BookingForm() {
             <button
               type="submit"
               className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-dj-gold to-dj-pink text-dj-black-primary font-bold uppercase tracking-wider rounded-lg hover:shadow-glow-gold transition-all duration-300 hover:scale-105 relative overflow-hidden group disabled:opacity-50 text-sm sm:text-base"
-              disabled={submitted}
             >
-              <span className="relative z-10">{submitted ? 'Booking Received!' : 'Send Booking Request'}</span>
+              <span className="relative z-10">Prepare Booking Email</span>
               <div className="absolute inset-0 bg-gradient-to-r from-dj-pink to-dj-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
           </motion.div>
 
-          {/* Success Message */}
-          {submitted && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="p-4 bg-dj-gold/20 border border-dj-gold/50 rounded-lg text-center text-dj-cyan"
-            >
-              Thank you! We&apos;ll get back to you soon.
-            </motion.div>
-          )}
+          <p className="text-center text-xs leading-5 text-dj-cyan/60">
+            Submitting opens your email app with the booking details addressed to {dj.email}.
+          </p>
         </motion.form>
       </div>
     </section>

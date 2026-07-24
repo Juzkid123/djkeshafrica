@@ -1,116 +1,108 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
-import { Particles } from './particles'
 import { dj } from '@/lib/constants'
+import Image from 'next/image'
 
 export function Hero() {
-  const [displayedText, setDisplayedText] = useState('')
-  const [isDeleting, setIsDeleting] = useState(false)
-  const fullText = dj.name
-
-  useEffect(() => {
-    const typingSpeed = 100
-    const pauseDuration = 3000
-    const deletingSpeed = 50
-    const cycleInterval = 5000
-
-    let timeout: NodeJS.Timeout
-
-    const handleTyping = () => {
-      if (!isDeleting && displayedText.length < fullText.length) {
-        setDisplayedText(fullText.slice(0, displayedText.length + 1))
-        timeout = setTimeout(handleTyping, typingSpeed)
-      } else if (!isDeleting && displayedText.length === fullText.length) {
-        timeout = setTimeout(() => setIsDeleting(true), pauseDuration)
-      } else if (isDeleting && displayedText.length > 0) {
-        setDisplayedText(fullText.slice(0, displayedText.length - 1))
-        timeout = setTimeout(handleTyping, deletingSpeed)
-      } else if (isDeleting && displayedText.length === 0) {
-        setIsDeleting(false)
-        timeout = setTimeout(handleTyping, typingSpeed)
-      }
-    }
-
-    timeout = setTimeout(handleTyping, typingSpeed)
-    return () => clearTimeout(timeout)
-  }, [displayedText, isDeleting, fullText])
-
   return (
-    <section id="home" className="relative h-screen w-full overflow-x-hidden overflow-y-hidden bg-dj-black-primary">
-      {/* Particles background */}
-      <Particles />
+    <section
+      id="home"
+      className="relative min-h-screen w-full overflow-hidden bg-[#f7f4ed] text-[#111111]"
+    >
+      <div className="absolute inset-x-0 bottom-0 h-[34%] bg-[#090909] sm:h-[38%] lg:h-[40%]" />
+      <div className="absolute left-0 top-0 h-full w-[18px] bg-[#c8a24a] sm:w-[28px]" />
+      <div className="absolute right-0 top-0 h-2/3 w-[1px] bg-[#c8a24a]/50" />
+      <div className="absolute right-8 top-28 hidden h-40 w-40 rounded-full border border-[#c8a24a]/40 lg:block" />
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-dj-black-primary" />
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl flex-col px-5 pb-10 pt-24 sm:px-8 lg:px-12">
+        <div className="grid flex-1 items-center gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="max-w-3xl text-left lg:-translate-y-8">
+            <div className="mb-6 flex items-center gap-3 text-xs font-black uppercase tracking-[0.32em] text-[#8f6f22]">
+              <span className="h-px w-12 bg-[#c8a24a]" />
+              Accra's nightlife sound
+            </div>
 
-      {/* Content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-4">
-        <div className="text-center">
-          {/* DJ Name with Typing Animation */}
-          <motion.h1
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="font-display text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-dj-cyan mb-4 sm:mb-6 uppercase tracking-tighter leading-none min-h-[1.2em]"
-          >
-            {displayedText}
-            <motion.span
-              animate={{ opacity: [1, 0] }}
-              transition={{ duration: 0.6, repeat: Infinity }}
-              className="inline-block ml-2 text-dj-gold"
-            >
-              |
-            </motion.span>
-          </motion.h1>
+            <h1 className="font-display text-[clamp(3.8rem,12vw,9rem)] font-black uppercase leading-[0.84] text-[#090909]">
+              DJ
+              <span className="block whitespace-nowrap text-[#c8a24a]">KESH AFRICA</span>
+            </h1>
 
-          {/* Tagline */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-8 sm:mb-12"
-          >
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#ff0000] font-bold tracking-wider">
-              {dj.subline}
+            <p className="mt-6 max-w-2xl text-base font-semibold leading-7 text-[#333333] sm:text-lg">
+              {dj.subline} - commercial DJ, party architect, and the sound behind premium
+              nightlife moments across Ghana.
             </p>
-          </motion.div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center items-center w-fit mx-auto">
-            <motion.a
-              href="#contact"
-              whileHover={{ boxShadow: '0 0 30px rgba(212, 175, 55, 0.8)' }}
-              className="w-fit px-6 sm:px-8 py-3 sm:py-4 border-2 border-dj-gold text-dj-cyan font-bold uppercase tracking-wider hover:shadow-glow-gold transition-all duration-300 rounded relative overflow-hidden group text-sm sm:text-base flex-shrink-0"
-            >
-              <span className="relative z-10">Book DJ KESHAFRICA</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-dj-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-            </motion.a>
-            <motion.a
-              href="https://audiomack.com/djkeshafrica/song/we-outside?share-user-id=23213730"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ boxShadow: '0 0 30px rgba(59, 130, 246, 0.8)' }}
-              className="w-fit px-6 sm:px-8 py-3 sm:py-4 border-2 border-dj-blue text-dj-cyan font-bold uppercase tracking-wider hover:shadow-glow-blue transition-all duration-300 rounded relative overflow-hidden group text-sm sm:text-base flex-shrink-0"
-            >
-              <span className="relative z-10">Listen Mixes</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-dj-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-            </motion.a>
+            <div className="mt-8 flex w-full flex-col gap-3 sm:w-fit sm:flex-row">
+              <a
+                href="#contact"
+                className="inline-flex min-h-12 items-center justify-center border-2 border-[#c8a24a] bg-[#090909] px-7 py-3 text-center text-sm font-black uppercase tracking-[0.14em] text-white shadow-[0_14px_35px_rgba(9,9,9,0.22)] transition-colors hover:bg-[#c8a24a] hover:text-[#090909]"
+              >
+                Book DJ KESH AFRICA
+              </a>
+              <a
+                href="https://audiomack.com/djkeshafrica/song/we-outside?share-user-id=23213730"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-12 items-center justify-center border-2 border-[#090909] bg-[#f7f4ed] px-7 py-3 text-center text-sm font-black uppercase tracking-[0.14em] text-[#090909] transition-colors hover:border-[#c8a24a] hover:bg-[#c8a24a] hover:text-[#090909]"
+              >
+                Listen To Mixes
+              </a>
+            </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.35 }}
-            className="mt-6 sm:mt-8 flex justify-center"
-          >
-            <img
-              src="/stupid-muzik-logo.svg"
-              alt="STUPID MUZIK TO THE WIASE"
-              className="h-28 w-28 sm:h-36 sm:w-36 md:h-44 md:w-44 object-contain"
-            />
-          </motion.div>
+          <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
+            <div className="absolute -left-4 top-8 h-full w-full border-2 border-[#c8a24a]" />
+            <div className="relative overflow-hidden bg-[#111111] shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-[#c8a24a]/20" />
+              <Image
+                src={dj.profileImage}
+                alt={dj.name}
+                width={900}
+                height={1100}
+                priority
+                sizes="(max-width: 1024px) 100vw, 48vw"
+                className="relative z-10 h-[420px] w-full object-cover object-center grayscale contrast-110 sm:h-[520px] lg:h-[650px]"
+              />
+              <div className="absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-[#090909] via-[#090909]/72 to-transparent px-5 pb-5 pt-24">
+                <div className="flex items-end justify-between gap-4">
+                  <div>
+                    <p className="text-xs font-black uppercase tracking-[0.28em] text-[#c8a24a]">
+                      {dj.fullTagline}
+                    </p>
+                    <p className="mt-2 text-2xl font-black uppercase tracking-[0.12em] text-white">
+                      Premium DJ Sets
+                    </p>
+                  </div>
+                  <Image
+                    src="/stupid-muzik-logo.svg"
+                    alt="STUPID MUZIK TO THE WIASE"
+                    width={80}
+                    height={80}
+                    className="h-20 w-20 shrink-0 object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative mt-8 grid gap-3 border-t border-[#c8a24a]/35 pt-5 text-white sm:grid-cols-3">
+          <div>
+            <p className="text-[11px] font-black uppercase tracking-[0.24em] text-[#c8a24a]">
+              Based In
+            </p>
+            <p className="mt-1 text-sm font-bold">{dj.location}</p>
+          </div>
+          <div>
+            <p className="text-[11px] font-black uppercase tracking-[0.24em] text-[#c8a24a]">
+              Sound
+            </p>
+            <p className="mt-1 text-sm font-bold">Afrobeats, Amapiano, Hip-Hop, Club</p>
+          </div>
+          <div>
+            <p className="text-[11px] font-black uppercase tracking-[0.24em] text-[#c8a24a]">
+              Brand
+            </p>
+            <p className="mt-1 text-sm font-bold">{dj.brandName}</p>
+          </div>
         </div>
       </div>
     </section>

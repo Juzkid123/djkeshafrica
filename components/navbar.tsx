@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import { dj } from '@/lib/constants'
 
@@ -17,6 +17,7 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const navIsDark = scrolled || mobileMenuOpen
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +27,15 @@ export function Navbar() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMobileMenuOpen(false)
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [mobileMenuOpen])
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
@@ -43,24 +53,25 @@ export function Navbar() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 overflow-x-hidden ${
-        scrolled 
-          ? 'bg-dj-black-primary/60 backdrop-blur-md border-b border-dj-gold/10 py-2' 
-          : 'py-3'
+        navIsDark
+          ? 'bg-dj-black-primary/85 backdrop-blur-md border-b border-dj-gold/15 py-2'
+          : 'bg-[#f7f4ed]/92 backdrop-blur-md border-b border-[#c8a24a]/25 py-3 shadow-[0_12px_30px_rgba(9,9,9,0.06)]'
       }`}
     >
       <div className="w-full flex items-center justify-between h-12 sm:h-14 px-3 sm:px-4 md:px-6">
         {/* Logo - Top Left */}
         <motion.a
           href="#home"
+          onClick={(e) => handleNavClick(e, '#home')}
           whileHover={{ scale: 1.05 }}
           className="flex items-center flex-shrink-0"
         >
           <Image
             src={dj.logo}
             alt={dj.name}
-            width={80}
-            height={36}
-            className="h-auto w-auto sm:w-auto sm:h-auto"
+            width={100}
+            height={45}
+            className="h-auto w-auto"
             priority
             sizes="(max-width: 640px) 80px, 100px"
           />
@@ -80,7 +91,9 @@ export function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
               whileHover={{ color: '#d4af37' }}
-              className="text-dj-cyan text-sm lg:text-base font-extrabold uppercase tracking-widest lg:tracking-[0.15em] hover:text-dj-gold transition-colors whitespace-nowrap cursor-pointer pb-1 border-b-2 border-b-transparent hover:border-b-dj-gold"
+              className={`text-sm lg:text-base font-extrabold uppercase tracking-widest lg:tracking-[0.15em] transition-colors whitespace-nowrap cursor-pointer pb-1 border-b-2 border-b-transparent hover:border-b-dj-gold ${
+                navIsDark ? 'text-dj-cyan hover:text-dj-gold' : 'text-[#090909] hover:text-[#9b741d]'
+              }`}
             >
               {link.label}
             </motion.a>
@@ -92,25 +105,30 @@ export function Navbar() {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden flex flex-col gap-2"
           whileHover={{ scale: 1.1 }}
+          aria-label="Toggle menu"
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-navigation"
         >
           <motion.span
             animate={{ rotate: mobileMenuOpen ? 45 : 0, y: mobileMenuOpen ? 8 : 0 }}
-            className="w-6 h-0.5 bg-white block"
+            className={`w-6 h-0.5 block ${navIsDark ? 'bg-white' : 'bg-[#090909]'}`}
           />
           <motion.span
             animate={{ opacity: mobileMenuOpen ? 0 : 1 }}
-            className="w-6 h-0.5 bg-white block"
+            className={`w-6 h-0.5 block ${navIsDark ? 'bg-white' : 'bg-[#090909]'}`}
           />
           <motion.span
             animate={{ rotate: mobileMenuOpen ? -45 : 0, y: mobileMenuOpen ? -8 : 0 }}
-            className="w-6 h-0.5 bg-white block"
+            className={`w-6 h-0.5 block ${navIsDark ? 'bg-white' : 'bg-[#090909]'}`}
           />
         </motion.button>
       </div>
 
       {/* Mobile Menu */}
+      <AnimatePresence>
       {mobileMenuOpen && (
         <motion.div
+          id="mobile-navigation"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
@@ -129,6 +147,7 @@ export function Navbar() {
           ))}
         </motion.div>
       )}
+      </AnimatePresence>
     </motion.nav>
   )
 }

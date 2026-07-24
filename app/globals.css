@@ -1,20 +1,31 @@
 @import 'tailwindcss';
 
 :root {
-  --dj-black-primary: #0d0d0d;
-  --dj-black-secondary: #1a1a1a;
-  --dj-purple: #9333ea;
-  --dj-blue: #3b82f6;
-  --dj-pink: #ec4899;
-  --dj-cyan: #f2f2f2;
+  --dj-black-primary: #090909;
+  --dj-black-secondary: #151515;
+  --dj-gold: #c8a24a;
+  --dj-ivory: #f7f4ed;
+  --dj-muted: #b9b2a3;
+  --dj-cyan: #f7f4ed;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    cursor: none;
     overflow-x: hidden;
     max-width: 100%;
+  }
+
+  section[id] { scroll-margin-top: 5rem; }
+
+  :focus-visible {
+    outline: 3px solid var(--dj-gold);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--dj-gold);
+    color: var(--dj-black-primary);
   }
   
   body {
@@ -27,6 +38,30 @@
   
   * {
     box-sizing: border-box;
+  }
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 20000;
+  transform: translateY(-200%);
+  background: var(--dj-gold);
+  color: var(--dj-black-primary);
+  padding: .75rem 1rem;
+  font-weight: 800;
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
@@ -45,37 +80,35 @@
   }
   
   .text-dj-purple {
-    color: var(--dj-purple);
+    color: var(--dj-gold);
   }
   
   .text-dj-blue {
-    color: var(--dj-blue);
+    color: var(--dj-muted);
   }
   
   .text-dj-pink {
-    color: var(--dj-pink);
+    color: var(--dj-gold);
   }
   
   .border-dj-purple {
-    border-color: var(--dj-purple);
+    border-color: var(--dj-gold);
   }
   
   .shadow-glow-purple {
-    box-shadow: 0 0 10px rgba(147, 51, 234, 0.5), 0 0 20px rgba(147, 51, 234, 0.3);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
   }
   
   .shadow-glow-blue {
-    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
   }
   
   .shadow-glow-pink {
-    box-shadow: 0 0 10px rgba(236, 72, 153, 0.5), 0 0 20px rgba(236, 72, 153, 0.3);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
   }
   
   .glass {
-    background-color: rgba(13, 13, 13, 0.3);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(200, 162, 74, 0.18);
   }
 }

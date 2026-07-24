@@ -21,8 +21,8 @@ export function AudioCard({ title, artist, cover, url }: AudioCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      whileHover={{ y: -5, boxShadow: '0 0 30px rgba(147, 51, 234, 0.6)' }}
-      className="glass p-6 rounded-lg overflow-hidden group cursor-pointer h-full flex flex-col hover:shadow-glow-purple transition-all duration-300"
+      whileHover={{ y: -5, boxShadow: '0 20px 45px rgba(9, 9, 9, 0.16)' }}
+      className="p-6 rounded-lg overflow-hidden group cursor-pointer h-full flex flex-col border border-[#d8cba9] bg-white transition-all duration-300 hover:border-dj-gold"
     >
       {/* Album Art */}
       <div className="relative aspect-square rounded-lg overflow-hidden mb-4 bg-dj-black-secondary">
@@ -59,11 +59,11 @@ export function AudioCard({ title, artist, cover, url }: AudioCardProps) {
 
       {/* Info */}
       <div className="flex-1 flex flex-col">
-        <h3 className="text-lg font-bold text-dj-cyan mb-1 line-clamp-2">{title}</h3>
-        <p className="text-sm text-dj-cyan/60 mb-4">{artist}</p>
+        <h3 className="text-lg font-bold text-[#090909] mb-1 line-clamp-2">{title}</h3>
+        <p className="text-sm text-[#5e574b] mb-4">{artist}</p>
         
-        <div className="flex items-center justify-between text-xs text-dj-cyan/60 mt-auto">
-          <span className="px-3 py-1 bg-dj-gold/20 rounded-full text-dj-gold font-semibold">Audiomack</span>
+        <div className="flex items-center justify-between text-xs text-[#090909] mt-auto">
+          <span className="px-3 py-1 bg-dj-gold/20 rounded-full text-[#090909] font-semibold">Audiomack</span>
           <span className="text-dj-blue">→ Listen</span>
         </div>
       </div>

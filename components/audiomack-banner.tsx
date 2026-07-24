@@ -6,7 +6,7 @@ import { mixes, dj } from '@/lib/constants'
 
 export function AudiomackBanner() {
   return (
-    <section className="py-12 sm:py-20 md:py-32 px-3 sm:px-4 md:px-6 bg-gradient-to-br from-dj-gold/10 to-dj-blue/10 border-y border-dj-gold/30 overflow-x-hidden">
+    <section className="py-12 sm:py-20 md:py-32 px-3 sm:px-4 md:px-6 bg-[#f7f4ed] border-y border-dj-gold/30 overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -34,10 +34,10 @@ export function AudiomackBanner() {
             />
           </motion.a>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-dj-cyan uppercase mb-3 sm:mb-4 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-[#090909] uppercase mb-3 sm:mb-4 tracking-tight">
             Stream All Tracks
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-dj-cyan/70 mb-6 sm:mb-8 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-[#3d3a33] mb-6 sm:mb-8 max-w-2xl mx-auto">
             DJ KESHAFRICA&apos;s complete collection of STU•P•I•D MUZIK exclusively on Audiomack. Stream, download, and share your favorite mixes.
           </p>
 
@@ -72,7 +72,7 @@ export function AudiomackBanner() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.05 }}
               whileHover={{ x: 5 }}
-              className="group flex items-center gap-4 p-4 bg-dj-black-primary/50 border border-dj-gold/30 rounded-lg hover:border-dj-gold/60 hover:bg-dj-black-primary/80 transition-all duration-300"
+              className="group flex items-center gap-4 p-4 bg-white border border-dj-gold/30 rounded-lg hover:border-dj-gold/60 hover:bg-[#fffaf0] transition-all duration-300"
             >
               <div className="flex-shrink-0 w-12 h-12 bg-dj-gold/20 rounded-lg flex items-center justify-center group-hover:bg-dj-gold/40 transition-colors">
                 <svg className="w-6 h-6 text-dj-gold" fill="currentColor" viewBox="0 0 24 24">
@@ -80,8 +80,8 @@ export function AudiomackBanner() {
                 </svg>
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="font-bold text-dj-cyan truncate">{mix.title}</h3>
-                <p className="text-sm text-dj-cyan/50">Listen on Audiomack →</p>
+                <h3 className="font-bold text-[#090909] truncate">{mix.title}</h3>
+                <p className="text-sm text-[#5e574b]">Listen on Audiomack →</p>
               </div>
             </motion.a>
           ))}

@@ -74,7 +74,6 @@ export function Gallery() {
                   scale={1.05}
                   transitionSpeed={400}
                   className="h-full w-full"
-                  disable={typeof window !== 'undefined' && window.innerWidth < 768}
                 >
                   <Image
                     src={item.image}
@@ -84,8 +83,7 @@ export function Gallery() {
                     className="h-full w-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
                     style={{ imageRendering: 'auto' }}
                     quality={100}
-                    priority={index < 2 || isFeatured}
-                    loading={index < 2 || isFeatured ? 'eager' : 'lazy'}
+                    priority={index === 0}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
 

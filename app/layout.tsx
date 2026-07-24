@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Bebas_Neue } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
-import { CustomCursor } from '@/components/custom-cursor'
 import './globals.css'
 
 const geist = Geist({ 
@@ -19,15 +18,18 @@ const bebasNeue = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  title: 'STUP!DMUZIK TO THE WIASE',
-  description: 'Experience world-class DJ performances and exclusive music events',
+  title: 'DJ Keshafrica | STUP!D MUZIK',
+  description: 'Book DJ Keshafrica for premium Afrobeats, Amapiano, Hip-Hop, and club experiences across Ghana and beyond.',
   generator: 'v0.app',
   openGraph: {
-    title: 'STUP!DMUZIK TO THE WIASE',
-    siteName: 'STUP!DMUZIK TO THE WIASE',
+    title: 'DJ Keshafrica | STUP!D MUZIK',
+    siteName: 'DJ Keshafrica',
+    description: 'Book DJ Keshafrica for premium Afrobeats, Amapiano, Hip-Hop, and club experiences across Ghana and beyond.',
+    type: 'website',
   },
   twitter: {
-    title: 'STUP!DMUZIK TO THE WIASE',
+    card: 'summary_large_image',
+    title: 'DJ Keshafrica | STUP!D MUZIK',
   },
   icons: {
     icon: [{ url: '/favicon-keshafrica.svg?v=4', type: 'image/svg+xml' }],
@@ -44,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable} ${geistMono.variable} ${bebasNeue.variable} bg-dj-black-primary overflow-x-hidden`} suppressHydrationWarning>
       <body className="font-sans antialiased bg-dj-black-primary text-dj-cyan overflow-x-hidden w-full max-w-full" suppressHydrationWarning>
-        <CustomCursor />
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
