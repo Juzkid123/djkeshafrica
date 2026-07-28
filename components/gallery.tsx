@@ -32,7 +32,7 @@ export function Gallery() {
   }
 
   return (
-    <section id="gallery" className="py-12 sm:py-20 md:py-32 px-3 sm:px-4 md:px-6 bg-dj-black-primary overflow-x-hidden">
+    <section id="gallery" className="px-4 py-16 sm:px-6 sm:py-20 md:py-24 bg-dj-black-primary overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -45,7 +45,7 @@ export function Gallery() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-dj-cyan uppercase mb-3 sm:mb-4 tracking-tight">
             Gallery
           </h2>
-          <div className="w-16 sm:w-20 h-1 sm:h-1.5 bg-gradient-to-r from-dj-gold to-dj-pink rounded-full" />
+          <div className="h-1 w-16 bg-dj-gold sm:w-20" />
         </motion.div>
 
         {/* Gallery Grid */}

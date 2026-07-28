@@ -1,28 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useState } from 'react'
 import { merchandise } from '@/lib/constants'
 import Image from 'next/image'
-import { ShoppingCart, Rocket } from 'lucide-react'
 
 export function Merchandise() {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all')
-  const [cart, setCart] = useState<{ [key: number]: number }>({})
-
-  const categories = ['all', ...new Set(merchandise.map(item => item.category))]
-  
-  const filteredMerchandise = selectedCategory === 'all' 
-    ? merchandise 
-    : merchandise.filter(item => item.category === selectedCategory)
-
-  const handleAddToCart = (id: number) => {
-    setCart(prev => ({
-      ...prev,
-      [id]: (prev[id] || 0) + 1,
-    }))
-  }
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -42,58 +24,23 @@ export function Merchandise() {
     },
   }
 
-  const cartCount = Object.values(cart).reduce((sum, count) => sum + count, 0)
-
   return (
-    <section id="merch" className="py-12 sm:py-20 md:py-32 px-3 sm:px-4 md:px-6 bg-dj-black-primary overflow-x-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section id="merch" className="border-t border-dj-gold/15 bg-dj-black-primary px-4 py-16 sm:px-6 sm:py-20 md:py-24">
+      <div className="mx-auto max-w-6xl">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-8 sm:mb-12 md:mb-16"
+          className="mb-10 sm:mb-12"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-dj-cyan uppercase mb-3 sm:mb-4 tracking-tight">
             Merch
           </h2>
-          <div className="w-16 sm:w-20 h-1 sm:h-1.5 bg-gradient-to-r from-dj-gold to-dj-pink rounded-full" />
-          <p className="text-dj-gold mt-4 text-sm sm:text-base">Rock the Official DJ KESHAFRICA Collection</p>
+          <div className="h-1 w-16 bg-dj-gold sm:w-20" />
+          <p className="mt-4 max-w-xl text-sm leading-6 text-dj-cyan/70 sm:text-base">A focused selection of official DJ KESHAFRICA essentials.</p>
         </motion.div>
-
-        {/* Category Filter */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-8 sm:mb-12 flex flex-wrap gap-2 sm:gap-4"
-        >
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-4 sm:px-6 py-2 sm:py-3 rounded uppercase text-xs sm:text-sm font-bold tracking-wider transition-all duration-300 ${
-                selectedCategory === category
-                  ? 'bg-gradient-to-r from-dj-gold to-dj-pink text-dj-black shadow-glow-gold'
-                  : 'border-2 border-dj-cyan text-dj-cyan hover:border-dj-gold hover:text-dj-gold'
-              }`}
-            >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
-            </button>
-          ))}
-        </motion.div>
-
-        {/* Cart Badge */}
-        {cartCount > 0 && (
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            className="mb-6 sm:mb-8 inline-block px-4 py-2 bg-dj-gold text-dj-black rounded-full text-sm font-bold"
-          >
-            Cart Items: {cartCount}
-          </motion.div>
-        )}
 
         {/* Merchandise Grid */}
         <motion.div
@@ -101,38 +48,38 @@ export function Merchandise() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
+          className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6"
         >
-          {filteredMerchandise.map((item) => (
+          {merchandise.map((item) => (
             <motion.div
               key={item.id}
               variants={itemVariants}
-              className="bg-dj-black-secondary rounded-lg overflow-hidden group border border-dj-cyan/20 hover:border-dj-gold/50 transition-all duration-300 flex flex-col"
+              className="group flex flex-col overflow-hidden border border-dj-gold/20 bg-dj-black-secondary transition-colors duration-300 hover:border-dj-gold/60"
             >
               {/* Image Container */}
-              <div className="relative h-48 sm:h-56 overflow-hidden bg-dj-black-primary">
+              <div className="relative h-64 overflow-hidden bg-dj-black-primary sm:h-72">
                 <Image
                   src={item.image}
                   alt={item.name}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                   quality={95}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 640px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               {/* Product Info */}
-              <div className="flex-1 p-4 sm:p-6 flex flex-col">
-                <h3 className="text-dj-cyan font-bold text-sm sm:text-base mb-2 group-hover:text-dj-gold transition-colors">
+              <div className="flex flex-1 flex-col p-5 sm:p-6">
+                <h3 className="mb-2 text-base font-bold text-dj-cyan transition-colors group-hover:text-dj-gold sm:text-lg">
                   {item.name}
                 </h3>
-                <p className="text-dj-blue text-xs sm:text-sm mb-3 flex-1">
+                <p className="mb-5 flex-1 text-sm leading-6 text-dj-blue">
                   {item.description}
                 </p>
 
                 {/* Sizes */}
-                <div className="mb-3">
+                <div className="mb-5">
                   <p className="text-dj-gold text-xs font-bold mb-2 uppercase">Sizes:</p>
                   <div className="flex flex-wrap gap-2">
                     {item.sizes.map((size) => (
@@ -146,49 +93,30 @@ export function Merchandise() {
                   </div>
                 </div>
 
-                {/* Price and Add to Cart */}
+                {/* Price and enquiry */}
                 <div className="flex items-center justify-between gap-3">
-                  <span className="text-lg sm:text-xl font-bold text-dj-gold">
+                  <span className="text-xl font-bold text-dj-gold">
                     ${item.price}
                   </span>
-                  <motion.button
-                    whileHover={{ boxShadow: '0 0 20px rgba(212, 175, 55, 0.6)' }}
-                    onClick={() => handleAddToCart(item.id)}
-                    className="flex-1 sm:flex-none px-3 sm:px-4 py-2 bg-gradient-to-r from-dj-gold to-dj-pink text-dj-black font-bold rounded text-xs sm:text-sm uppercase tracking-wider hover:scale-105 transition-transform flex items-center justify-center gap-2"
-                  >
-                    <ShoppingCart size={16} />
-                    <span className="hidden sm:inline">Add</span>
-                  </motion.button>
+                  <a href="#contact" className="border border-dj-gold px-4 py-2 text-xs font-bold uppercase tracking-wider text-dj-gold transition-colors hover:bg-dj-gold hover:text-dj-black-primary">
+                    Enquire
+                  </a>
                 </div>
               </div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Empty State */}
-        {filteredMerchandise.length === 0 && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center py-12"
-          >
-            <p className="text-dj-cyan text-lg">No items in this category yet.</p>
-          </motion.div>
-        )}
-
         {/* Coming Soon Note */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 sm:mt-16 p-6 sm:p-8 border-2 border-dj-gold rounded-lg bg-dj-black-secondary/50 text-center"
+          className="mt-8 border-t border-dj-gold/30 pt-6 text-center sm:mt-10"
         >
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <Rocket className="w-5 h-5 text-dj-gold" />
-            <p className="text-dj-gold font-bold uppercase">Checkout Coming Soon</p>
-          </div>
-          <p className="text-dj-cyan text-sm sm:text-base">
-            Full e-commerce functionality and payment integration coming soon. Contact us for bulk orders!
+          <p className="font-bold uppercase tracking-wider text-dj-gold">Online checkout is coming soon</p>
+          <p className="mt-2 text-sm text-dj-cyan/70 sm:text-base">
+            Contact us directly for availability, sizing, and bulk orders.
           </p>
         </motion.div>
       </div>

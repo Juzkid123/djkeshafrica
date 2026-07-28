@@ -26,7 +26,7 @@ export function Mixes() {
   }
 
   return (
-    <section id="mixes" className="py-16 sm:py-24 md:py-32 px-4 md:px-6 bg-[#f7f4ed] text-[#090909] overflow-x-hidden">
+    <section id="mixes" className="px-4 py-16 sm:px-6 sm:py-20 md:py-24 bg-[#f7f4ed] text-[#090909] overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div

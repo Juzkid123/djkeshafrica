@@ -47,7 +47,7 @@ export function BookingForm() {
   }
 
   return (
-    <section id="contact" className="py-12 sm:py-20 md:py-32 px-3 sm:px-4 md:px-6 bg-dj-black-secondary overflow-x-hidden">
+    <section id="contact" className="px-4 py-16 sm:px-6 sm:py-20 md:py-24 bg-dj-black-secondary overflow-x-hidden">
       <div className="max-w-2xl mx-auto">
         {/* Section Header */}
         <motion.div
